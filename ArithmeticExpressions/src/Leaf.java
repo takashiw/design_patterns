@@ -14,8 +14,8 @@ public class Leaf extends Composite {
     }
 
     @Override
-    public void accept(ArithmeticVisitor arithmeticVisitor){
-        arithmeticVisitor.visit(this);
+    public Object accept(ArithmeticVisitor arithmeticVisitor){
+        return arithmeticVisitor.visit(this);
     }
 
 }

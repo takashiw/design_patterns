@@ -49,7 +49,7 @@ public abstract class Composite {
                 getOperation() + "is the child of " + parent + "\n";
     }
 
-    public abstract void accept(ArithmeticVisitor arithmeticVisitor);
+    public abstract Object accept(ArithmeticVisitor arithmeticVisitor);
 
 //    public String print(){
 //        String value = this.toString();

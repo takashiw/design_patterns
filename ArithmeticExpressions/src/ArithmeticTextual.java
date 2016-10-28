@@ -3,21 +3,23 @@
  */
 public class ArithmeticTextual implements ArithmeticVisitor {
 
-    String value = "";
     int indent = 0;
+    String value = "";
 
     @Override
-    public void visit(Leaf leaf){
-        System.out.println(indentToString() + "[" + leaf.value + "]");
+    public Object visit(Leaf leaf){
+        value += indentToString() + "[" + leaf.value + "]" + "\n";
+        return value;
     }
 
-    public void visit(ArrayComposite arrayComposite){
+    public Object visit(ArrayComposite arrayComposite){
 
-        System.out.println(indentToString() + "[" + arrayComposite.operation + "]");
+        value += indentToString() + "[" + arrayComposite.operation + "]" + "\n";
         indent++;
         for(int i = 0; i < arrayComposite.array.length; i++){
             arrayComposite.array[i].accept(this);
         }
+        return value;
     }
 
     public String indentToString(){

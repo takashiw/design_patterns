@@ -46,9 +46,9 @@ public class ArrayComposite extends Composite{
     }
 
     @Override
-    public void accept(ArithmeticVisitor arithmeticVisitor){
+    public Object accept(ArithmeticVisitor arithmeticVisitor){
 
-        arithmeticVisitor.visit(this);
+        return arithmeticVisitor.visit(this);
 
     }
 
