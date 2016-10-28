@@ -8,10 +8,12 @@ public class Driver {
         ArrayComposite ac2 = new ArrayComposite("+", new Leaf(3), new Leaf(2), ac3);
         ArrayComposite ac = new ArrayComposite("/", new Leaf(1), ac2);
 
+
+
 //        System.out.println(ac.accept(new ArithmeticTextual()));
 //        System.out.println(ac.accept(new ArithmeticInfix()));
 //        System.out.println(ac.accept(new ArithmeticLispVisitor()));
-            ac.accept(new ArithmeticEvaluateVisitor());
+            System.out.println(ac.accept(new ArithmeticEvaluateVisitor()));
 
     }
 

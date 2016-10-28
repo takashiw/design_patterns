@@ -2,14 +2,14 @@
  * Created by Takashi on 10/12/16.
  */
 public class Leaf extends Composite {
-    public int value;
+    public double value;
 
-    public Leaf(int value){
+    public Leaf(double value){
         this.value = value;
     }
 
     @Override
-    public Integer getOperation(){
+    public Double getOperation(){
         return this.value;
     }
 
