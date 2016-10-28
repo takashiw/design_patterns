@@ -12,38 +12,31 @@ public class ArithmeticEvaluateVisitor implements ArithmeticVisitor {
 
     public Object visit(Leaf leaf) {
         st.push(leaf.value);
-        System.out.println(leaf.value);
         value += " " + leaf.value;
         return leaf.value;
     }
     public Object visit(ArrayComposite arrayComposite){
-        System.out.println("(");
         st.push("(");
         for(int i = 0; i < arrayComposite.array.length; i++){
             arrayComposite.array[i].accept(this);
             if(i < arrayComposite.array.length - 1){
             } else {
                 execute(arrayComposite.operation);
-                System.out.println(arrayComposite.operation);
-                System.out.println(")");
             }
         }
         return solution;
     }
 
     public void execute(String operation){
-        System.out.println("Operation: " + operation);
         Object temp;
         temp = st.pop();
         while(temp != "("){
-            System.out.println("Temp: " + temp);
             if(solutionNullFlag){
                 solution = (Double)temp;
                 solutionNullFlag = false;
             } else {
                 solution = executeArithmetic((Double) temp, solution, operation);
             }
-            System.out.println("Solution: " + solution);
             temp = st.pop();
         }
     }

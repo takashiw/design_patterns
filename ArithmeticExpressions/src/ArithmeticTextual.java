@@ -19,6 +19,8 @@ public class ArithmeticTextual implements ArithmeticVisitor {
         for(int i = 0; i < arrayComposite.array.length; i++){
             arrayComposite.array[i].accept(this);
         }
+        indent--;
+
         return value;
     }
 
@@ -34,4 +36,5 @@ public class ArithmeticTextual implements ArithmeticVisitor {
 
         return indentString;
     }
+
 }
