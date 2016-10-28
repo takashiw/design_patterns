@@ -4,7 +4,6 @@
 public abstract class Composite {
 
     private Composite parent = null;
-    Iter<Composite> iterator = null;
 
     final public Composite addWithParent(Composite part){
         try{
@@ -51,32 +50,5 @@ public abstract class Composite {
 
     public abstract Object accept(ArithmeticVisitor arithmeticVisitor);
 
-//    public String print(){
-//        String value = this.toString();
-//        value += performToString(1);
-//        return value;
-//    }
-//
-//    public String performToString(int indentCount){
-//        int level = 0;
-//        String indent = "";
-//        for(int i = 0; i < indentCount; i++){
-//            indent += "\t";
-//        }
-//        String value = "";
-//        makeIter();
-//        while(iterator.hasNext()){
-//            Composite comp = iterator.next();
-//            value = value + indent + comp.toString();
-//            value = value + comp.performToString(indentCount+1);
-//        }
-//        return value;
-//    }
-
     public Object getOperation(){ return null; }
-
-//    public Iter<Composite> makeIter(){
-//        iterator = new CompositeIterator(this);
-//        return iterator;
-//    }
 }

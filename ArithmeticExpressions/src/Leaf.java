@@ -17,5 +17,4 @@ public class Leaf extends Composite {
     public Object accept(ArithmeticVisitor arithmeticVisitor){
         return arithmeticVisitor.visit(this);
     }
-
 }

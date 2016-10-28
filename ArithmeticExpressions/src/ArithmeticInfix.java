@@ -12,7 +12,6 @@ public class ArithmeticInfix implements ArithmeticVisitor {
 
     @Override
     public Object visit(ArrayComposite arrayComposite){
-//        value += arrayComposite.operation;
         value += "(";
         for(int i = 0; i < arrayComposite.array.length; i++){
             arrayComposite.array[i].accept(this);
