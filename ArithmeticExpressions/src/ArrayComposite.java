@@ -44,4 +44,12 @@ public class ArrayComposite extends Composite{
     public String getOperation(){
         return this.operation;
     }
+
+    @Override
+    public void accept(ArithmeticVisitor arithmeticVisitor){
+
+        arithmeticVisitor.visit(this);
+
+    }
+
 }

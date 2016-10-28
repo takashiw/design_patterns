@@ -49,31 +49,34 @@ public abstract class Composite {
                 getOperation() + "is the child of " + parent + "\n";
     }
 
-    public String print(){
-        String value = this.toString();
-        value += performToString(1);
-        return value;
-    }
+    public abstract void accept(ArithmeticVisitor arithmeticVisitor);
 
-    public String performToString(int indentCount){
-        String indent = "";
-        for(int i = 0; i < indentCount; i++){
-            indent += "\t";
-        }
-        String value = "";
-        makeIter();
-        while(iterator.hasNext()){
-            Composite comp = iterator.next();
-            value = value + indent + comp.toString();
-            value = value + comp.performToString(indentCount+1);
-        }
-        return value;
-    }
+//    public String print(){
+//        String value = this.toString();
+//        value += performToString(1);
+//        return value;
+//    }
+//
+//    public String performToString(int indentCount){
+//        int level = 0;
+//        String indent = "";
+//        for(int i = 0; i < indentCount; i++){
+//            indent += "\t";
+//        }
+//        String value = "";
+//        makeIter();
+//        while(iterator.hasNext()){
+//            Composite comp = iterator.next();
+//            value = value + indent + comp.toString();
+//            value = value + comp.performToString(indentCount+1);
+//        }
+//        return value;
+//    }
 
     public Object getOperation(){ return null; }
 
-    public Iter<Composite> makeIter(){
-        iterator = new CompositeIterator(this);
-        return iterator;
-    }
+//    public Iter<Composite> makeIter(){
+//        iterator = new CompositeIterator(this);
+//        return iterator;
+//    }
 }
